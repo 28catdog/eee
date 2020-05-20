@@ -1,0 +1,17 @@
+﻿<Window x:Class="WpfApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="225,62,0,0" TextWrapping="Wrap" Text="user号" VerticalAlignment="Top" Width="75"/>
+        <Button Content="注册" HorizontalAlignment="Left" Margin="225,151,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Content="刷卡" HorizontalAlignment="Left" Margin="391,151,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Content="攻击(扩展)" HorizontalAlignment="Left" Margin="570,151,0,0" VerticalAlignment="Top" Width="75"/>
+        <Label Content="结果" HorizontalAlignment="Left" Margin="225,243,0,0" VerticalAlignment="Top" Height="82" Width="337"/>
+
+    </Grid>
+</Window>

@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcfService", "WcfService\WcfService.csproj", "{961E5ECF-39DA-457A-B13D-EE8F07A5A6B7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApp", "WpfApp\WpfApp.csproj", "{26EF9A96-6344-4595-8401-BB2A7232D59D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{961E5ECF-39DA-457A-B13D-EE8F07A5A6B7} = {961E5ECF-39DA-457A-B13D-EE8F07A5A6B7}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

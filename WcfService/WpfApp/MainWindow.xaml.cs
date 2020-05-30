@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -35,6 +36,8 @@ namespace WpfApp
             {
                 MessageBox.Show("程序初始化错误，请联系系统管理员！");
             }
+           
+            
         }
 
         //初始化，得到文件主目录，为了服务端那边找到Id等目录方便

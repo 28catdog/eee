@@ -5,11 +5,8 @@ using System.Web;
 
 namespace WcfService
 {
-    public class Data
+    public class Data0
     {
-        List<int> a = new List<int>
-        {
-
-        };
+        public static string RootPath="";
     }
 }

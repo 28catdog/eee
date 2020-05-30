@@ -50,5 +50,21 @@ namespace WpfApp
             }
             MyHost.GetFilePath(rootpath);
         }
+
+        private void Registered(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                this.text.Text = MyHost.Registered();
+                this.label.Content = "注册成功！";
+            }
+            catch
+            {
+                this.text.Text = "?????";
+                this.label.Content = "注册失败！";
+            }
+        }
+
+
     }
 }

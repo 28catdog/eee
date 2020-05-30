@@ -7,11 +7,11 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <TextBox HorizontalAlignment="Left" Height="20" Margin="225,62,0,0" TextWrapping="Wrap" Text="user号" VerticalAlignment="Top" Width="75"/>
-        <Button Content="注册" HorizontalAlignment="Left" Margin="225,151,0,0" VerticalAlignment="Top" Width="75"/>
+        <TextBox Name="text" HorizontalAlignment="Left" Height="20" Margin="225,62,0,0" TextWrapping="Wrap" Text="user号" VerticalAlignment="Top" Width="75"/>
+        <Button Content="注册" HorizontalAlignment="Left" Margin="225,151,0,0" VerticalAlignment="Top" Width="75" Click="Registered"/>
         <Button Content="刷卡" HorizontalAlignment="Left" Margin="391,151,0,0" VerticalAlignment="Top" Width="75"/>
         <Button Content="攻击(扩展)" HorizontalAlignment="Left" Margin="570,151,0,0" VerticalAlignment="Top" Width="75"/>
-        <Label Content="结果" HorizontalAlignment="Left" Margin="225,243,0,0" VerticalAlignment="Top" Height="82" Width="337"/>
+        <Label Name="label" Content="结果" HorizontalAlignment="Left" Margin="225,243,0,0" VerticalAlignment="Top" Height="82" Width="337"/>
 
     </Grid>
 </Window>

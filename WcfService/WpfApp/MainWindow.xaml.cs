@@ -68,6 +68,17 @@ namespace WpfApp
             }
         }
 
-
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            int user = Convert.ToInt32(text.Text);
+            if(MyHost.Login(user))
+            {
+                label.Content = "成功";
+            }
+            else
+            {
+                label.Content = "验证失败，本卡可能已被盗刷";
+            }
+        }
     }
 }

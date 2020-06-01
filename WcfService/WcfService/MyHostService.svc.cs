@@ -6,6 +6,7 @@ using System.Runtime.Serialization;
 using System.Security.Cryptography;
 using System.ServiceModel;
 using System.Text;
+using System.Windows;
 
 namespace WcfService
 {
@@ -14,6 +15,7 @@ namespace WcfService
     public class MyHostService : IMyHostService
     {
         string RootPath = Data0.RootPath;
+        public static int count = 3;
         
         public void GetFilePath(string rootpath)
         {
@@ -59,7 +61,8 @@ namespace WcfService
             //key就是主机主密钥
             //我这里没有用Diffie-Hellman！！！！！！！！！！！！！！！所以该处可以升级
             string key = File.ReadAllText(HostPath);
-
+            
+           
             MD5 md5 = MD5.Create();
             //将字符串装换为字节数组
             byte[] byteold = Encoding.UTF8.GetBytes(key);
@@ -80,6 +83,15 @@ namespace WcfService
             sw.Write(id);
             sw.Flush();
             sw.Close();
+            
+            //计数，新建新文件存放对应id号的次数
+            string s = user + "1.txt";
+            FileStream fs1 = File.Create(s);         
+            StreamWriter sw1 = new StreamWriter(s);
+            sw1.Write(count);
+            sw1.Flush();
+            sw1.Close();
+            fs1.Close();
 
             //生成回话密钥
             byteold = Encoding.UTF8.GetBytes(id+"0");
@@ -107,7 +119,24 @@ namespace WcfService
 
         public bool Login(int User)
         {
-            return true;
+            //若文件存在，则说明该user号存在，登录并将对应计数文件内容减一
+            string path = User.ToString() + "1.txt";
+            if (File.Exists(path))
+            {
+                int num = Convert.ToInt32(File.ReadAllText(path));
+                num -= 1;
+                File.WriteAllText(path, num.ToString());
+                //若次数用完则删除该文件，这样下次登陆时即返回false而达到不能再使用的目的
+                if (num == 0)
+                {
+                    File.Delete(path);
+                    MessageBox.Show("本卡已失效，请重新生成一张");
+                }
+                   
+                return true;
+            }
+            else
+                return false;
         }
     }
 }
